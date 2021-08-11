@@ -2,7 +2,7 @@
     <div class="sku-container">
         <div v-if="!disabled" class="sku-check">
             <div v-if="theme == 1" class="theme-1">
-                <el-card v-for="(item, index) in myAttribute" :key="index" class="item" shadow="never">
+                <el-card v-for="(item, index) in myAttribute" :key="index" class="spec-item" shadow="never">
                     <div slot="header">{{ item.name }}</div>
                     <el-checkbox v-for="(item2, index2) in item.item" :key="index2" v-model="item2.checked" :label="item2.name" size="small" />
                     <el-input v-if="item.canAddAttribute" v-model="item.addAttribute" size="small" placeholder="新增一个规格" class="add-attr" @keyup.enter.native="onAddAttribute(index)">
@@ -455,7 +455,7 @@ export default {
             flex-wrap: wrap;
             justify-content: space-between;
             margin-bottom: 10px;
-            .item {
+            .spec-item {
                 width: 32%;
                 &:last-child:nth-child(3n - 1) {
                     margin-right: calc(100% - 32% * 2 - 4% / 2) !important;
